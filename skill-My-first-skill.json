@@ -1,0 +1,629 @@
+{
+  "intents": [
+    {
+      "intent": "Yes",
+      "examples": [
+        {
+          "text": "Yes"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "negative_reference",
+      "examples": [
+        {
+          "text": "I don't like"
+        },
+        {
+          "text": "sounds bad."
+        },
+        {
+          "text": "I don't want to have more than"
+        },
+        {
+          "text": "is awful"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "characteristics",
+      "examples": [
+        {
+          "text": "math class"
+        },
+        {
+          "text": "operating systems class"
+        },
+        {
+          "text": "Java class"
+        },
+        {
+          "text": "practical laboratory"
+        },
+        {
+          "text": "physics class"
+        },
+        {
+          "text": "chemistry class"
+        },
+        {
+          "text": "robotics class"
+        },
+        {
+          "text": "programming languages class"
+        },
+        {
+          "text": "C++ class"
+        },
+        {
+          "text": "Matlab class"
+        },
+        {
+          "text": "Linux class"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "positive_reference",
+      "examples": [
+        {
+          "text": "I would like to study"
+        },
+        {
+          "text": "I'm very good at"
+        },
+        {
+          "text": "I like"
+        },
+        {
+          "text": "I'm interested in"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "No",
+      "examples": [
+        {
+          "text": "No"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "choose_fieldofstudy",
+      "examples": [
+        {
+          "text": "I'm willing to follow a field of study related to this faculty."
+        },
+        {
+          "text": "I'm going to pick a field of study."
+        },
+        {
+          "text": "I want to express my will in studying at this faculty."
+        },
+        {
+          "text": "I want to choose a field of study."
+        },
+        {
+          "text": "I'm interested in choosing an educational program"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "greeting",
+      "examples": [
+        {
+          "text": "Good morning!"
+        },
+        {
+          "text": "Hi!"
+        },
+        {
+          "text": "Hello future student!"
+        },
+        {
+          "text": "Hello!"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "classes",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Programming languages",
+          "synonyms": [
+            "dynamic languages",
+            "modeling language",
+            "interface definition",
+            "object orientated",
+            "java jsp",
+            "html dhtml"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "maths",
+          "synonyms": [
+            "math",
+            "mathematics",
+            "algebra",
+            "calculus",
+            "arithmetic",
+            "geometry",
+            "science",
+            "polynomial",
+            "engineering"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "physics",
+          "synonyms": [
+            "physicist",
+            "thermodynamics",
+            "mechanics",
+            "electrodynamics",
+            "relativity",
+            "theory",
+            "electrostatics",
+            "relativistic",
+            "gravitation",
+            "postulates"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "java",
+          "synonyms": [
+            "jdk",
+            "jvm",
+            "netbeans",
+            "openjdk",
+            "jre",
+            "javafx",
+            "jdeveloper",
+            "javadoc",
+            "maven"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "linux",
+          "synonyms": [
+            "ubuntu",
+            "unix",
+            "redhat",
+            "os",
+            "centos",
+            "virtualbox",
+            "windows"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "mechanics",
+          "synonyms": [
+            "mechanic",
+            "engineers",
+            "physics",
+            "theory",
+            "thermodynamics",
+            "relativity",
+            "statics",
+            "physicist",
+            "technicians",
+            "machinist",
+            "mechanical"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "C++",
+          "synonyms": [
+            "compiler",
+            "debugger",
+            "executable",
+            "optimizations",
+            "programmer",
+            "developer",
+            "programer",
+            "parallelization",
+            "commandline",
+            "coder",
+            "gui",
+            "multiprocessor"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "matlab",
+          "synonyms": [
+            "simulink",
+            "labview",
+            "mathworks",
+            "scilab",
+            "signalexpress",
+            "verilog",
+            "modelsim"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "chemistry",
+          "synonyms": [
+            "chemical",
+            "biochemistry",
+            "electrochemistry",
+            "science",
+            "scientist",
+            "chemist",
+            "researcher"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "numerical systems",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "cryptography",
+          "synonyms": [
+            "encryption",
+            "cryptosystem",
+            "cryptology",
+            "decryption",
+            "coding"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "NoToClass",
+      "output": {},
+      "parent": "node_5_1589036215088",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Anything else"
+      },
+      "conditions": "#negative_reference",
+      "dialog_node": "node_1_1589119533153",
+      "previous_sibling": "node_1_1589040043222"
+    },
+    {
+      "type": "standard",
+      "title": "YesToClass",
+      "parent": "node_5_1589036215088",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Anything else"
+      },
+      "conditions": "#positive_reference",
+      "dialog_node": "node_1_1589040043222"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "If Java or C++ or Linux don't sound so good for you, I would recommend you to check other faculties's websites, like  : www.imst.pub.ro, www.eletro.pub.ro"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1589119533153",
+      "conditions": "@classes:java ||   @classes:(C++) || @classes:linux",
+      "dialog_node": "response_4_1589119533158",
+      "previous_sibling": "response_3_1589119533158"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "If you don't like Cryptography, I would recommend you not to follow the Computers (Computer Science) field."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1589119533153",
+      "conditions": "@classes:cryptography",
+      "dialog_node": "response_3_1589119533158",
+      "previous_sibling": "response_2_1589119533158"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "If you don't like physics (mechanics) or chemistry, I would recommend you not to follow the Automatic Control (Systems engineering) field ."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1589119533153",
+      "conditions": "@classes:physics || @classes:mechanics || @classes:chemistry",
+      "dialog_node": "response_2_1589119533158"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "title": "Can I help you with something else?",
+            "options": [
+              {
+                "label": "Yes",
+                "value": {
+                  "input": {
+                    "text": "Yes_ans"
+                  }
+                }
+              },
+              {
+                "label": "No",
+                "value": {
+                  "input": {
+                    "text": "No_ans"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "Anything else",
+      "disabled": true,
+      "dialog_node": "response_1_1589113860685",
+      "previous_sibling": "node_2_1589114069138"
+    },
+    {
+      "type": "standard",
+      "title": "EvaluateAns",
+      "parent": "Anything else",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#Yes || #No",
+      "dialog_node": "node_2_1589114069138",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Thank you for using our guide. We wish you the best of luck!"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_2_1589114069138",
+      "conditions": "#No || #negative_reference",
+      "dialog_node": "response_10_1589114559155",
+      "previous_sibling": "response_10_1589114542587"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "For further information, you can visit our official website: www.acs.pub.ro, choosing Admitere section, Licenta category. Thank you for using our guide and we wish you the best of luck!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1589114069138",
+      "conditions": "#Yes || #positive_reference",
+      "dialog_node": "response_10_1589114542587"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "If you have chosen Cryptography, I would recommend you to follow the Computers (Computer Science) field."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1589040043222",
+      "conditions": "@classes:cryptography",
+      "dialog_node": "response_8_1589106665926",
+      "previous_sibling": "response_8_1589106574064"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "If you have chosen Java or C++ or Linux, I would recommend you both study field : IS and CTI, for more details about the classes that are different from one field to another, please check the curriculum from out website."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1589040043222",
+      "conditions": "@classes:java ||   @classes:(C++) || @classes:linux",
+      "dialog_node": "response_8_1589107191261",
+      "previous_sibling": "response_8_1589106665926"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "If you have chosen Matlab, I would recommend you to follow the Automatic Control (Systems engineering) field ."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1589040043222",
+      "conditions": "@classes:matlab",
+      "dialog_node": "response_2_1589184620667",
+      "previous_sibling": "response_8_1589107191261"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "If you have chosen Physics (mechanics) and Chemistry, I would recommend you to follow the Automatic Control (Systems engineering) field ."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1589040043222",
+      "conditions": "@classes:physics && @classes:chemistry",
+      "dialog_node": "response_8_1589106574064"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Can I help you with something else?"
+              },
+              {
+                "text": "Is there something else I could help you with?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_5_1589036215088",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Choose a filed of study",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please write the subjects you are interested in."
+              },
+              {
+                "text": "What are the subjects you are less interested in?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#choose_fieldofstudy",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_5_1589036215088",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Welcome to our study guide! How can I help you?"
+              },
+              {
+                "text": "Hello! This is our faculty field of study guide. I am here to help. Tell me your questions."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#greeting",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "My first skill",
+  "language": "en",
+  "description": ""
+}
